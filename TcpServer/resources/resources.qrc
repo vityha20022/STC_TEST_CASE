@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>plus.png</file>
+        <file>pressedPlus.png</file>
+        <file>server.png</file>
+    </qresource>
+</RCC>
