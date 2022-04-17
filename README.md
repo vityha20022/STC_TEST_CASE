@@ -1,7 +1,7 @@
 # STC_TEST_CASE
 ## TCP Server
 ### Install
-Open .pro from TcpServer directory in QtCreator.
+Open .pro file from TcpServer directory in QtCreator.
 ### Usage
 You can create listeners for the server using the button in the lower right corner of the application.
 You can open the client if you accidentally closed it with the "Open client" button.
