@@ -21,6 +21,11 @@ TcpServer::TcpServer(int numberOfPort, QWidget *parent) :
     QVBoxLayout *layout = new QVBoxLayout;
     QString ipStr = QHostAddress(tcpServer->serverAddress().toIPv4Address()).toString();
     QString portStr = QString("%0").arg(tcpServer->serverPort());
+    if (!tcpServer->isListening())
+    {
+        ipStr = tr("Server is down!");
+        portStr = tr("Server is down!");
+    }
     QLabel *ipLabel = new QLabel(tr("Server IP address: ") + ipStr);
     ipLabel->setAlignment(Qt::AlignRight);
     QLabel *portLabel = new QLabel(tr("Server port: ") + portStr);
@@ -54,14 +59,6 @@ TcpServer::TcpServer(int numberOfPort, QWidget *parent) :
     layout->setAlignment(addListenerButton, Qt::AlignRight);
 
     setLayout(layout);
-}
-
-TcpServer::~TcpServer()
-{
-    foreach (auto client, activeClients)
-    {
-        client->hide();
-    }
 }
 
 void TcpServer::processNewConnection()

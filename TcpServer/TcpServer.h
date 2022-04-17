@@ -24,8 +24,6 @@ class TcpServer : public QWidget
 public:
     TcpServer(int numberOfPort, QWidget *parent = 0);
 
-    ~TcpServer();
-
 private slots:
     virtual void processNewConnection();
     void readMessage();
